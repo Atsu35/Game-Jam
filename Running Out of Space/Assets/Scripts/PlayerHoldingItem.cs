@@ -32,6 +32,10 @@ public class PlayerHoldingItem : MonoBehaviour
                     {
                         objectGrabbable.Grab(objectGrabPointTransform);
                     }
+                    if (raycastHit.transform.TryGetComponent(out FirstMessage message))
+                    {
+                        message.DisplayMessage();
+                    }
                 }
             }
             else
@@ -40,6 +44,11 @@ public class PlayerHoldingItem : MonoBehaviour
                 objectGrabbable.Drop();
                 objectGrabbable = null;
             }
+        }
+        if (objectGrabbable != null && Input.GetMouseButtonDown(0))
+        {
+            objectGrabbable.Throw();
+            objectGrabbable = null;
         }
     }
 }
