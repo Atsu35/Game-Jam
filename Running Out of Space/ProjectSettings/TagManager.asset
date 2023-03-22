@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Stick
   - Ivy
+  - Boulder
   layers:
   - Default
   - TransparentFX
