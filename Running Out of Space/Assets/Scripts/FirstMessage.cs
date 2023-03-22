@@ -9,10 +9,10 @@ public class FirstMessage : MonoBehaviour
     public GameObject stickMessageObject;
     public GameObject ivyMessageObject;
 
-    private bool stumpMessageDisplayed = false;
-    private bool rockMessageDisplayed = false;
-    private bool stickMessageDisplayed = false;
-    private bool ivyMessageDisplayed = false;
+    private static bool stumpMessageDisplayed = false;
+    private static bool rockMessageDisplayed = false;
+    private static bool stickMessageDisplayed = false;
+    private static bool ivyMessageDisplayed = false;
 
     // Start is called before the first frame update
     void Start()
