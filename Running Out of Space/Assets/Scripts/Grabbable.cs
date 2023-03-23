@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour
 {
-    public Transform cam;
-    public Transform attackPoint;
-    public GameObject objectToThrow;
+    private Transform cam;
+    private Transform attackPoint;
+    private GameObject objectToThrow;
 
     public float throwForce;
     public float throwUpwardForce;
@@ -17,6 +17,10 @@ public class Grabbable : MonoBehaviour
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
+
+        cam = GameObject.Find("Camera").transform;
+        attackPoint = GameObject.Find("GrabPoint").transform;
+        objectToThrow = this.gameObject;
     }
 
     public void Grab(Transform objectGrabPointTransform)

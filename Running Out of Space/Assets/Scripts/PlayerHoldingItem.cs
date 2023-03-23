@@ -6,6 +6,7 @@ public class PlayerHoldingItem : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
+    [SerializeField] private Transform toolGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
 
     private Grabbable objectGrabbable;
@@ -30,7 +31,16 @@ public class PlayerHoldingItem : MonoBehaviour
                     //Debug.Log(Raycast.transform);
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
-                        objectGrabbable.Grab(objectGrabPointTransform);
+                        /*
+                        if (objectGrabbable.gameObject.tag == "axe")
+                        {
+                            objectGrabbable.Grab(toolGrabPointTransform);
+                        }
+                        else
+                        {
+                        */
+                            objectGrabbable.Grab(objectGrabPointTransform);
+                        //}
                     }
                     if (raycastHit.transform.TryGetComponent(out FirstMessage message))
                     {
