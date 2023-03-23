@@ -76,8 +76,8 @@ public class CraftingTable : MonoBehaviour
         Collider[] colliderArray = Physics.OverlapBox(transform.position, transform.localScale, Quaternion.identity, m_LayerMask);
         foreach (Collider col in colliderArray)
         {
-            Instantiate(craftables[i], this.gameObject.transform.position, this.gameObject.transform.rotation);
             Destroy(col.gameObject);
         }
+        Instantiate(craftables[i], this.gameObject.transform.position, this.gameObject.transform.rotation);
     }
 }

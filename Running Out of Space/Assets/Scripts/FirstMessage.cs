@@ -32,21 +32,25 @@ public class FirstMessage : MonoBehaviour
         {
             stumpMessageObject.SetActive(true);
             stumpMessageDisplayed = true;
+            Time.timeScale = 0f;
         }
         else if (this.gameObject.tag == "Rock" && !rockMessageDisplayed)
         {
             rockMessageObject.SetActive(true);
             rockMessageDisplayed = true;
+            Time.timeScale = 0f;
         }
         else if (this.gameObject.tag == "Stick" && !stickMessageDisplayed)
         {
             stickMessageObject.SetActive(true);
             stickMessageDisplayed = true;
+            Time.timeScale = 0f;
         }
         else if (this.gameObject.tag == "Ivy" && !ivyMessageDisplayed)
         {
             ivyMessageObject.SetActive(true);
             ivyMessageDisplayed = true;
+            Time.timeScale = 0f;
         }
     }
 
@@ -54,6 +58,7 @@ public class FirstMessage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Time.timeScale = 1.0f;
             stumpMessageObject.SetActive(false);
             rockMessageObject.SetActive(false);
             stickMessageObject.SetActive(false);
